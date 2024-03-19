@@ -1,7 +1,6 @@
-﻿using bmtqs_assessment.Services.Interfaces;
+﻿using bmtqs_assessment.Models;
+using bmtqs_assessment.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using System.Threading;
 
 namespace bmtqs_assessment.Controllers
 {
@@ -10,7 +9,7 @@ namespace bmtqs_assessment.Controllers
         private readonly ILogger<PagesController> _logger;
         private readonly IContactDatabaseService _contactDatabaseService;
 
-        public PagesController(ILogger<PagesController> logger, 
+        public PagesController(ILogger<PagesController> logger,
             IContactDatabaseService contactDatabaseService)
         {
             _logger = logger;
@@ -20,6 +19,20 @@ namespace bmtqs_assessment.Controllers
         public IActionResult CreateContact()
         {
             return View();
+        }
+
+        public IActionResult UpdateContact(int id, string firstName, string lastName, string companyName, string mobileNumber, string emailAddress)
+        {
+            ContactModel model = new ContactModel
+            {
+                ContactID = id,
+                FirstName = firstName,
+                LastName = lastName,
+                CompanyName = companyName,
+                MobileNumber = mobileNumber,
+                EmailAddress = emailAddress
+            };
+            return View("UpdateContact", model);
         }
 
         public async Task<IActionResult> ViewAllContacts(CancellationToken cancellationToken)

@@ -27,4 +27,11 @@ public class ContactController : Controller
         await _contactDatabaseService.SoftDeleteContactAsync(model, cancellationToken);
         return RedirectToAction("ViewAllContacts", "Pages");
     }
+
+    [HttpPost]
+    public async Task<IActionResult> UpdateContact(ContactModel model, CancellationToken cancellationToken)
+    {
+        await _contactDatabaseService.UpdateContactAsync(model, cancellationToken);
+        return RedirectToAction("ViewAllContacts", "Pages");
+    }
 }

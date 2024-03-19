@@ -1,0 +1,23 @@
+﻿@model ContactModel; 
+
+@{
+    ViewData["Title"] = "Update contact";
+}
+
+<h1>Update contact</h1>
+@using (Html.BeginForm("UpdateContact", "Contact", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.ContactID);
+    @Html.LabelFor(model => model.FirstName);
+    @Html.TextBoxFor(model => model.FirstName)
+    @Html.LabelFor(model => model.LastName)
+    @Html.TextBoxFor(model => model.LastName)
+    @Html.LabelFor(model => model.CompanyName)
+    @Html.TextBoxFor(model => model.CompanyName)
+    @Html.LabelFor(model => model.MobileNumber)
+    @Html.TextBoxFor(model => model.MobileNumber)
+    @Html.LabelFor(model => model.EmailAddress)
+    @Html.TextBoxFor(model => model.EmailAddress)
+
+    <input type="submit" />
+}

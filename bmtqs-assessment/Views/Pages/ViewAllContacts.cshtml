@@ -46,8 +46,8 @@
                 @Html.DisplayFor(modelItem => item.EmailAddress)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "SoftDeletedContact", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Update", "UpdateContact", new { id=item.ContactID, firstName = item.FirstName, lastName = item.LastName, 
+                    companyName = item.CompanyName, mobileNumber = item.MobileNumber, emailAddress = item.EmailAddress })
             </td>
         </tr>
         @Html.HiddenFor(modelItem => item.ContactID);

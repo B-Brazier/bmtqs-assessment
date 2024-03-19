@@ -1,7 +1,7 @@
-﻿using bmtqs_assessment.Models;
-using bmtqs_assessment.Services.Interfaces;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Data;
+using bmtqs_assessment.Models;
+using bmtqs_assessment.Services.Interfaces;
 
 namespace bmtqs_assessment.Services;
 
@@ -10,7 +10,7 @@ public class ContactDatabaseService : IContactDatabaseService
     private readonly ILogger _logger;
     private readonly IDBConnectionService _connectionService;
 
-    public ContactDatabaseService (
+    public ContactDatabaseService(
         ILogger<ContactDatabaseService> logger,
         IDBConnectionService connectionService)
     {
@@ -80,11 +80,11 @@ public class ContactDatabaseService : IContactDatabaseService
         firstNameParameter.SqlDbType = SqlDbType.NVarChar;
         SqlParameter lastNameParameter = command.Parameters.AddWithValue("@LastName", contact.LastName);
         lastNameParameter.SqlDbType = SqlDbType.NVarChar;
-        SqlParameter companyNameParameter = command.Parameters.AddWithValue("@CompanyName", contact.CompanyName);
+        SqlParameter companyNameParameter = command.Parameters.AddWithValue("@CompanyName", contact.CompanyName ?? string.Empty);
         companyNameParameter.SqlDbType = SqlDbType.NVarChar;
-        SqlParameter mobileNumberParameter = command.Parameters.AddWithValue("@MobileNumber", contact.MobileNumber);
+        SqlParameter mobileNumberParameter = command.Parameters.AddWithValue("@MobileNumber", contact.MobileNumber ?? string.Empty);
         mobileNumberParameter.SqlDbType = SqlDbType.NVarChar;
-        SqlParameter emailAddressParameter = command.Parameters.AddWithValue("@EmailAddress", contact.EmailAddress);
+        SqlParameter emailAddressParameter = command.Parameters.AddWithValue("@EmailAddress", contact.EmailAddress ?? string.Empty);
         emailAddressParameter.SqlDbType = SqlDbType.NVarChar;
 
         // Prepare Command
@@ -136,11 +136,11 @@ public class ContactDatabaseService : IContactDatabaseService
         firstNameParameter.SqlDbType = SqlDbType.NVarChar;
         SqlParameter lastNameParameter = command.Parameters.AddWithValue("@LastName", contact.LastName);
         lastNameParameter.SqlDbType = SqlDbType.NVarChar;
-        SqlParameter companyNameParameter = command.Parameters.AddWithValue("@CompanyName", contact.CompanyName);
+        SqlParameter companyNameParameter = command.Parameters.AddWithValue("@CompanyName", contact.CompanyName ?? string.Empty);
         companyNameParameter.SqlDbType = SqlDbType.NVarChar;
-        SqlParameter mobileNumberParameter = command.Parameters.AddWithValue("@MobileNumber", contact.MobileNumber);
+        SqlParameter mobileNumberParameter = command.Parameters.AddWithValue("@MobileNumber", contact.MobileNumber ?? string.Empty);
         mobileNumberParameter.SqlDbType = SqlDbType.NVarChar;
-        SqlParameter emailAddressParameter = command.Parameters.AddWithValue("@EmailAddress", contact.EmailAddress);
+        SqlParameter emailAddressParameter = command.Parameters.AddWithValue("@EmailAddress", contact.EmailAddress ?? string.Empty);
         emailAddressParameter.SqlDbType = SqlDbType.NVarChar;
 
         // Prepare Command
