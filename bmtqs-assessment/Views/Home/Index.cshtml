@@ -3,8 +3,22 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>What would you like to do?</p>
-    <a asp-controller="Pages" asp-action="CreateContact">Create new contact</a>
-    <a asp-controller="Pages" asp-action="ViewAllContacts">View all contacts</a>
+    <h1 class="display-4">BMTQS - Assessment</h1>
+    <div class="landing-content">
+        <p>
+            The BMT Tax Depreciation Quantity Surveyors solution is used for an assessment purpose. It is a small C# Web App that allows the user to Create, Update and View a list of contacts.
+        </p>
+        <p>
+            Contacts contain a mandatory first name and last name. As well as a company name, mobile number and email address.
+        </p>
+        <p>What would you like to do?</p>
+        <div class="button-container">
+            <div class="button-layout-container">
+                <a asp-controller="Pages" asp-action="CreateContact" class="button button-primary">Create new contact</a>
+            </div>
+            <div class="button-layout-container">
+                <a asp-controller="Pages" asp-action="ViewAllContacts" class="button button-primary">View all contacts</a>
+            </div>
+        </div>
+    </div>
 </div>

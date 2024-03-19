@@ -1,0 +1,31 @@
+﻿.landing-content {
+    max-width: 60%;
+    margin-left: 20%;
+}
+
+.button-container {
+    margin: auto;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+}
+
+.button-layout-container {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .landing-content {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .button-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .button-layout-container {
+        margin-bottom: 40px;
+    }
+}

@@ -7,7 +7,7 @@
 ## About
 
 The BMT Tax Depreciation Quantity Surveyors solution is used for an assessment purpose. 
-It is a small `C#` Web App that allows the user to Create, Update and View A list of contacts.
+It is a small `C#` Web App that allows the user to Create, Update and View a list of contacts.
 
 Contacts contain a mandatory first name and last name. As well as a company name, mobile number and email address.
 

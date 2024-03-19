@@ -1,3 +1,6 @@
+@import 'buttons.css';
+@import 'landing-page.css';
+
 html {
   font-size: 14px;
 }
@@ -19,4 +22,8 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+
+footer {
+    margin-top: 20px;
 }

@@ -8,9 +8,9 @@
 @using (Html.BeginForm("CreateContact", "Contact", FormMethod.Post))
 {
     @Html.LabelFor(model => model.FirstName);
-    @Html.TextBoxFor(model => model.FirstName)
+    @Html.TextBoxFor(model => model.FirstName, new { @required = true })
     @Html.LabelFor(model => model.LastName)
-    @Html.TextBoxFor(model => model.LastName)
+    @Html.TextBoxFor(model => model.LastName, new { @required = true })
     @Html.LabelFor(model => model.CompanyName)
     @Html.TextBoxFor(model => model.CompanyName)
     @Html.LabelFor(model => model.MobileNumber)
