@@ -1,7 +1,13 @@
+using bmtqs_assessment.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Add Application Settings file as we need the configuration
+builder.Configuration.AddJsonFile("appsettings.json", optional: false);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.Configure<DatabaseConnectionModel>(builder.Configuration.GetSection("Database"));
 
 var app = builder.Build();
 

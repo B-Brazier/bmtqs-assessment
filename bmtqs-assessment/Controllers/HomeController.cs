@@ -1,5 +1,6 @@
 using bmtqs_assessment.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using System.Diagnostics;
 
 namespace bmtqs_assessment.Controllers
