@@ -1,29 +1,46 @@
 @import 'buttons.css';
 @import 'landing-page.css';
+@import 'contact.css';
 
 html {
   font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+        box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    }
+
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+
+    body {
+        margin-bottom: 60px;
+    }
+
+    footer {
+        margin-top: 20px;
+    }
+
+.nav-top {
+    background-color: #4287f5;
+    margin-right: 5px;
+    border-radius: 5px;
+    color: white !important;
+    font-weight: bold;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
+@media (max-width: 768px) {
 
-body {
-  margin-bottom: 60px;
-}
-
-footer {
-    margin-top: 20px;
+    .nav-top {
+        margin-top: 5px;
+        text-align: center;
+    }
 }

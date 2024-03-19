@@ -8,16 +8,29 @@
 @using (Html.BeginForm("UpdateContact", "Contact", FormMethod.Post))
 {
     @Html.HiddenFor(model => model.ContactID);
-    @Html.LabelFor(model => model.FirstName);
-    @Html.TextBoxFor(model => model.FirstName, new { @required = true })
-    @Html.LabelFor(model => model.LastName)
-    @Html.TextBoxFor(model => model.LastName, new { @required = true })
-    @Html.LabelFor(model => model.CompanyName)
-    @Html.TextBoxFor(model => model.CompanyName)
-    @Html.LabelFor(model => model.MobileNumber)
-    @Html.TextBoxFor(model => model.MobileNumber)
-    @Html.LabelFor(model => model.EmailAddress)
-    @Html.TextBoxFor(model => model.EmailAddress)
-
-    <input type="submit" />
+    <div class="contact-container">
+        <div class="contact-item">
+            @Html.LabelFor(model => model.FirstName)
+            @Html.TextBoxFor(model => model.FirstName, new { @required = true })
+        </div>
+        <div class="contact-item">
+            @Html.LabelFor(model => model.LastName)
+            @Html.TextBoxFor(model => model.LastName, new { @required = true })
+        </div>
+        <div class="contact-item">
+            @Html.LabelFor(model => model.CompanyName)
+            @Html.TextBoxFor(model => model.CompanyName)
+        </div>
+        <div class="contact-item">
+            @Html.LabelFor(model => model.MobileNumber)
+            @Html.TextBoxFor(model => model.MobileNumber)
+        </div>
+        <div class="contact-item">
+            @Html.LabelFor(model => model.EmailAddress)
+            @Html.TextBoxFor(model => model.EmailAddress, new { @class = "contact-item-final" })
+        </div>
+    </div>
+    <div class="contact-submit">
+        <input class="button button-primary" type="submit" value="Save" />
+    </div>
 }
