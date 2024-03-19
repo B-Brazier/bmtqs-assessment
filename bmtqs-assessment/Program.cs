@@ -1,4 +1,6 @@
 using bmtqs_assessment.Models;
+using bmtqs_assessment.Services.Interfaces;
+using bmtqs_assessment.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,10 @@ builder.Configuration.AddJsonFile("appsettings.json", optional: false);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.Configure<DatabaseConnectionModel>(builder.Configuration.GetSection("Database"));
+
+// Add custom services
+builder.Services.AddSingleton<IDBConnectionService, DBConnectionService>();
+builder.Services.AddSingleton<IContactDatabaseService, ContactDatabaseService>();
 
 var app = builder.Build();
 
