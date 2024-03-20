@@ -1,4 +1,8 @@
-﻿.landing-content {
+﻿/*
+    Styling for landing page
+*/
+
+.landing-content {
     max-width: 60%;
     margin-left: 20%;
 }

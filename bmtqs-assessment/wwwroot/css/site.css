@@ -1,6 +1,11 @@
 @import 'buttons.css';
 @import 'landing-page.css';
 @import 'contact.css';
+@import 'contact-list.css';
+
+/*
+   Import styles above from other css sources
+*/
 
 html {
   font-size: 14px;

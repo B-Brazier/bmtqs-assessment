@@ -1,4 +1,8 @@
-﻿.contact-container {
+﻿/*
+    Styling for Contact pages, create and update
+*/
+
+.contact-container {
     width: 100%;
     display: flex;
     flex-direction: row;

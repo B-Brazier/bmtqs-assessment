@@ -5,52 +5,119 @@
 }
 
 <h1>All contacts</h1>
-
+<div class="desktop-view">
 <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CompanyName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MobileNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EmailAddress)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CompanyName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MobileNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmailAddress)
-            </td>
-            <td>
-                @Html.ActionLink("Update", "UpdateContact", new { id=item.ContactID, firstName = item.FirstName, lastName = item.LastName, 
-                    companyName = item.CompanyName, mobileNumber = item.MobileNumber, emailAddress = item.EmailAddress })
-            </td>
-        </tr>
-        @Html.HiddenFor(modelItem => item.ContactID);
-}
-    </tbody>
-</table>
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CompanyName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MobileNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EmailAddress)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MobileNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmailAddress)
+                </td>
+                <td>
+                    @Html.ActionLink("Update", "UpdateContact", new { id=item.ContactID, firstName = item.FirstName, lastName = item.LastName,
+                                companyName = item.CompanyName,
+                                mobileNumber = item.MobileNumber,
+                                emailAddress = item.EmailAddress
+                            }, new { @class = "button button-secondary" })
+                </td>
+            </tr>
+            @Html.HiddenFor(modelItem => item.ContactID)
+    }
+        </tbody>
+    </table>
+</div>
+<div class="mobile-view">
+    <table class="table">
+        <tbody>
+            @foreach (var item in Model) {
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstName)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LastName)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CompanyName)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompanyName)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MobileNumber)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MobileNumber)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EmailAddress)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmailAddress)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="update-link">
+                        @Html.ActionLink("Update", "UpdateContact", new
+                            {
+                                id = item.ContactID,
+                                firstName = item.FirstName,
+                                lastName = item.LastName,
+                                companyName = item.CompanyName,
+                                mobileNumber = item.MobileNumber,
+                                emailAddress = item.EmailAddress
+                            }, new { @class = "button button-secondary" })
+                    </td>
+                </tr>
+                <tr><td></td></tr>
+                @Html.HiddenFor(modelItem => item.ContactID)                
+            }
+        </tbody>
+    </table>
+    </div>
