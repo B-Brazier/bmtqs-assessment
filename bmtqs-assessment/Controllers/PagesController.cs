@@ -35,6 +35,20 @@ namespace bmtqs_assessment.Controllers
             return View("UpdateContact", model);
         }
 
+        public IActionResult DeleteContact(int id, string firstName, string lastName, string companyName, string mobileNumber, string emailAddress)
+        {
+            ContactModel model = new ContactModel
+            {
+                ContactID = id,
+                FirstName = firstName,
+                LastName = lastName,
+                CompanyName = companyName,
+                MobileNumber = mobileNumber,
+                EmailAddress = emailAddress
+            };
+            return View("DeleteContact", model);
+        }
+
         public async Task<IActionResult> ViewAllContacts(CancellationToken cancellationToken)
         {
             var contacts = await _contactDatabaseService.GetContactsAsync(cancellationToken);

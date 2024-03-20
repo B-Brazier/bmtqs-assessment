@@ -1,0 +1,41 @@
+﻿@model ContactModel; 
+
+@{
+    ViewData["Title"] = "Update contact";
+}
+
+<h1>Delete contact</h1>
+<h4 class="delete-contact-heading">Are you sure you want to delete this contact?</h4>
+@using (Html.BeginForm("SoftDeleteContact", "Contact", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.ContactID);
+    <div class="contact-container-delete">
+        <div class="contact-item">
+            @Html.LabelFor(model => model.FirstName)
+            @Html.DisplayFor(model => model.FirstName)
+        </div>
+        <div class="contact-item">
+            @Html.LabelFor(model => model.LastName)
+            @Html.DisplayFor(model => model.LastName)
+        </div>
+        <div class="contact-item">
+            @Html.LabelFor(model => model.CompanyName)
+            @Html.DisplayFor(model => model.CompanyName)
+        </div>
+        <div class="contact-item">
+            @Html.LabelFor(model => model.MobileNumber)
+            @Html.DisplayFor(model => model.MobileNumber)
+        </div>
+        <div class="contact-item">
+            @Html.LabelFor(model => model.EmailAddress)
+            @Html.DisplayFor(model => model.EmailAddress, new { @class = "contact-item-final" })
+        </div>
+    </div>
+    <div class="contact-submit">
+        <input class="button button-delete" type="submit" value="Delete" />
+    </div>
+    <br />
+    <div class="contact-submit">
+        <a asp-controller="Pages" asp-action="ViewAllContacts" class="button button-primary">Cancel</a>
+    </div>
+}

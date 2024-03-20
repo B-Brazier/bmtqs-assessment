@@ -1,4 +1,8 @@
-﻿.desktop-view {
+﻿/*
+    Contact list style sheet. Alters the tables displayed for Mobile and Desktop view.
+*/
+
+.desktop-view {
     display: block;
 }
 

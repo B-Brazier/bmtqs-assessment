@@ -37,3 +37,19 @@
     background-color: #2574f4;
     color: white;
 }
+
+.button-delete {
+    border-radius: 10px;
+    box-shadow: 0px 8px #d4152f;
+    background-color: #ea2e47;
+}
+
+    .button-delete:hover {
+        background-color: #e81733;
+        color: white;
+    }
+
+    .button-delete:active {
+        box-shadow: 0px 4px #d4152f;
+        transform: translateY(4px);
+    }
