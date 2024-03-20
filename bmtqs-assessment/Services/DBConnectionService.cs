@@ -1,7 +1,7 @@
-﻿using bmtqs_assessment.Models;
+﻿using System.Data.SqlClient;
+using bmtqs_assessment.Models;
 using bmtqs_assessment.Services.Interfaces;
 using Microsoft.Extensions.Options;
-using System.Data.SqlClient;
 
 namespace bmtqs_assessment.Services;
 
@@ -19,6 +19,7 @@ public class DBConnectionService : IDBConnectionService
         _connectionModel = connectionModel.Value ?? throw new ArgumentNullException(nameof(connectionModel));
     }
 
+    // Create a database connection
     public SqlConnection GetDatabaseConnection()
     {
         var connectionString = _connectionModel.ConnectionString;

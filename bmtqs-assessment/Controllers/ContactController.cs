@@ -14,6 +14,7 @@ public class ContactController : Controller
         _contactDatabaseService = contactDatabaseService ?? throw new ArgumentNullException(nameof(contactDatabaseService));
     }
 
+    // Call Create contact service
     [HttpPost]
     public async Task<IActionResult> CreateContact(ContactModel model, CancellationToken cancellationToken)
     {
@@ -21,6 +22,7 @@ public class ContactController : Controller
         return RedirectToAction("ViewAllContacts", "Pages");
     }
 
+    // Call soft delete contact service
     [HttpPost]
     public async Task<IActionResult> SoftDeleteContact(ContactModel model, CancellationToken cancellationToken)
     {
@@ -28,6 +30,7 @@ public class ContactController : Controller
         return RedirectToAction("ViewAllContacts", "Pages");
     }
 
+    // Call update contact service
     [HttpPost]
     public async Task<IActionResult> UpdateContact(ContactModel model, CancellationToken cancellationToken)
     {

@@ -1,7 +1,6 @@
+using System.Diagnostics;
 using bmtqs_assessment.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
-using System.Diagnostics;
 
 namespace bmtqs_assessment.Controllers
 {
@@ -14,11 +13,13 @@ namespace bmtqs_assessment.Controllers
             _logger = logger;
         }
 
+        // Naviagate to index page
         public IActionResult Index()
         {
             return View();
         }
 
+        // Navigate to error page, note I've not done anything to change this.
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

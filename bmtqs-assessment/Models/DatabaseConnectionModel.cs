@@ -1,7 +1,7 @@
-﻿namespace bmtqs_assessment.Models
+﻿namespace bmtqs_assessment.Models;
+
+// Model for database connection string
+public class DatabaseConnectionModel
 {
-    public class DatabaseConnectionModel
-    {
-        public string? ConnectionString { get; set; }
-    }
+    public string? ConnectionString { get; set; }
 }

@@ -1,9 +1,9 @@
-namespace bmtqs_assessment.Models
-{
-    public class ErrorViewModel
-    {
-        public string? RequestId { get; set; }
+namespace bmtqs_assessment.Models;
 
-        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
-    }
+// Standard error model
+public class ErrorViewModel
+{
+    public string? RequestId { get; set; }
+
+    public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 }

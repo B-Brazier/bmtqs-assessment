@@ -16,11 +16,13 @@ namespace bmtqs_assessment.Controllers
             _contactDatabaseService = contactDatabaseService;
         }
 
+        // Navigate to Create Contact view
         public IActionResult CreateContact()
         {
             return View();
         }
 
+        // Navigate to Update Contact view
         public IActionResult UpdateContact(int id, string firstName, string lastName, string companyName, string mobileNumber, string emailAddress)
         {
             ContactModel model = new ContactModel
@@ -35,6 +37,7 @@ namespace bmtqs_assessment.Controllers
             return View("UpdateContact", model);
         }
 
+        // Navigate to Delete Contact view
         public IActionResult DeleteContact(int id, string firstName, string lastName, string companyName, string mobileNumber, string emailAddress)
         {
             ContactModel model = new ContactModel
@@ -49,6 +52,7 @@ namespace bmtqs_assessment.Controllers
             return View("DeleteContact", model);
         }
 
+        // Navigate to View all contacts view and add records
         public async Task<IActionResult> ViewAllContacts(CancellationToken cancellationToken)
         {
             var contacts = await _contactDatabaseService.GetContactsAsync(cancellationToken);

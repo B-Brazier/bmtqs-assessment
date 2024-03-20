@@ -39,8 +39,13 @@
     margin-top: 10px;
 }
 
-.delete-contact-heading {
+.delete-contact-heading, .note {
     text-align: center;
+}
+
+.note {
+    color: red;
+    font-weight: 600;
 }
 
 @media (max-width: 768px) {
